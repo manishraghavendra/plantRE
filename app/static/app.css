@@ -313,6 +313,10 @@ ol.steps li {
   align-items: center;
   margin-bottom: 1rem;
 }
+.page-toolbar {
+  margin-bottom: 1rem;
+  padding: 0.85rem 1.1rem;
+}
 .toolbar a {
   padding: 0.35rem 0.75rem;
   border-radius: 999px;
@@ -325,6 +329,23 @@ ol.steps li {
   text-decoration: none;
   border-color: var(--accent);
   color: var(--accent);
+}
+
+.search-form--inline {
+  max-width: 28rem;
+  margin-top: 0.5rem;
+}
+
+/* Horizontal scroll for wide admin tables */
+.table-responsive {
+  width: 100%;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  margin: 0.5rem 0 0;
+}
+.table-responsive table {
+  margin-top: 0;
+  width: 100%;
 }
 
 /* Search results */
@@ -402,6 +423,10 @@ body.admin .admin-nav a:hover {
 body.admin .admin-nav .search-form {
   flex: 0 1 16rem;
 }
+body.admin .admin-nav-search {
+  margin-left: auto;
+  max-width: 16rem;
+}
 body.admin .admin-nav .search-form input {
   font-size: 0.88rem;
   padding: 0.4rem 0.75rem;
@@ -453,6 +478,26 @@ body.admin .actions {
   display: flex;
   flex-wrap: wrap;
   gap: 0.5rem;
+  align-items: center;
+}
+body.admin .admin-actions-row {
+  margin: 0.5rem 0 0.75rem;
+}
+body.admin .admin-actions-row .btn.primary {
+  display: inline-block;
+  text-align: center;
+  padding: 0.5rem 1rem;
+}
+body.admin .table-actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.35rem 0.65rem;
+  vertical-align: middle;
+}
+body.admin .table-actions form {
+  margin: 0;
+  display: inline-block;
 }
 body.admin button,
 body.admin .btn {
@@ -479,7 +524,7 @@ body.admin table {
   border-collapse: separate;
   border-spacing: 0;
   width: 100%;
-  max-width: 48rem;
+  max-width: 100%;
   margin-top: 0.5rem;
   font-size: 0.92rem;
   border-radius: var(--radius-sm);
@@ -500,19 +545,45 @@ body.admin th {
 body.admin tr:last-child td {
   border-bottom: none;
 }
+/* Fieldsets default to min-width:min-content and ignore parent width — force shrink/wrap */
+body.admin fieldset {
+  min-width: 0;
+  max-width: 100%;
+  border: 1px solid #dce2e8;
+  border-radius: var(--radius-sm);
+  padding: 0.75rem 1rem;
+  margin: 0.75rem 0 0;
+  background: #f8faf9;
+}
+
+body.admin fieldset legend {
+  padding: 0 0.35rem;
+  font-weight: 600;
+  font-size: 0.9rem;
+}
+
 body.admin .check-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(14rem, 1fr));
-  gap: 0.35rem 0.75rem;
+  grid-template-columns: repeat(auto-fill, minmax(min(100%, 14rem), 1fr));
+  gap: 0.5rem 0.75rem;
   margin-top: 0.35rem;
-  max-width: 48rem;
+  max-width: 100%;
 }
+
 body.admin .check-grid label {
   font-weight: 500;
   display: flex;
-  gap: 0.35rem;
-  align-items: baseline;
+  gap: 0.45rem;
+  align-items: flex-start;
   margin: 0;
+  min-width: 0;
+  overflow-wrap: anywhere;
+  word-break: break-word;
+}
+
+body.admin .check-grid label input[type="checkbox"] {
+  flex-shrink: 0;
+  margin-top: 0.2rem;
 }
 img.admin-plant-thumb {
   width: 2.75rem;
@@ -522,15 +593,225 @@ img.admin-plant-thumb {
   border: 1px solid #dce2e8;
 }
 
-@media (max-width: 520px) {
+/* ----- Responsive (public + admin) ----- */
+@media (max-width: 768px) {
+  .container {
+    padding-left: 1rem;
+    padding-right: 1rem;
+    padding-bottom: 2.5rem;
+  }
+
+  .page-card,
+  .profile-block {
+    padding: 1.1rem 1rem;
+  }
+
+  h1 {
+    font-size: clamp(1.25rem, 4.5vw, 1.6rem);
+  }
+
   .site-header {
     flex-direction: column;
     align-items: stretch;
+    padding: 0.85rem 1rem;
+    gap: 0.85rem;
   }
+
   .site-nav {
     margin-left: 0;
+    width: 100%;
+    justify-content: flex-start;
   }
+
+  .site-nav a {
+    min-height: 2.75rem;
+    display: inline-flex;
+    align-items: center;
+    padding: 0.45rem 0.85rem;
+  }
+
   .search-form {
+    width: 100%;
     max-width: none;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0.5rem;
+  }
+
+  .search-form input[type="search"],
+  .search-form input[type="text"] {
+    width: 100%;
+    min-height: 2.75rem;
+    font-size: 1rem;
+  }
+
+  .search-form button,
+  .btn-pill {
+    width: 100%;
+    min-height: 2.75rem;
+    font-size: 1rem;
+  }
+
+  .search-form--inline {
+    max-width: none;
+    width: 100%;
+  }
+
+  .toolbar {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .toolbar a {
+    text-align: center;
+    justify-content: center;
+    min-height: 2.75rem;
+    display: flex;
+    align-items: center;
+    width: 100%;
+  }
+
+  .page-toolbar {
+    padding: 0.75rem 1rem;
+  }
+
+  .plant-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .plant-card {
+    min-height: 3.5rem;
+  }
+
+  .table-responsive table {
+    min-width: 32rem;
+  }
+
+  body.admin .admin-shell {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+
+  body.admin .admin-nav {
+    flex-wrap: wrap;
+    gap: 0.5rem 0.65rem;
+  }
+
+  body.admin .admin-nav > span.muted {
+    display: none;
+  }
+
+  body.admin .admin-nav a {
+    min-height: 2.5rem;
+    display: inline-flex;
+    align-items: center;
+    padding: 0.4rem 0.8rem;
+  }
+
+  body.admin .admin-nav-search {
+    flex: 1 1 100%;
+    margin-left: 0;
+    max-width: none;
+    width: 100%;
+    order: 10;
+  }
+
+  body.admin .admin-nav .search-form {
+    flex: 1 1 auto;
+    max-width: none;
+    width: 100%;
+    flex-direction: row;
+  }
+
+  body.admin .admin-nav .search-form input {
+    min-height: 2.5rem;
+    flex: 1;
+  }
+
+  body.admin .admin-nav .search-form button {
+    width: auto;
+    min-height: 2.5rem;
+    flex-shrink: 0;
+  }
+
+  body.admin input[type="text"],
+  body.admin input[type="number"],
+  body.admin input[type="url"],
+  body.admin input[type="search"],
+  body.admin select,
+  body.admin textarea {
+    max-width: 100%;
+    font-size: 1rem;
+  }
+
+  body.admin .check-grid {
+    grid-template-columns: 1fr;
+  }
+
+  body.admin .actions {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  body.admin .actions button,
+  body.admin .actions .btn {
+    width: 100%;
+    min-height: 2.75rem;
+    justify-content: center;
+    display: inline-flex;
+    align-items: center;
+  }
+
+  body.admin .admin-actions-row .btn.primary {
+    display: block;
+    width: 100%;
+    min-height: 2.75rem;
+    line-height: 1.3;
+  }
+
+  body.admin .table-actions {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0.5rem;
+  }
+
+  body.admin .table-actions a {
+    min-height: 2.5rem;
+    display: inline-flex;
+    align-items: center;
+    padding: 0.35rem 0.5rem;
+  }
+
+  body.admin .table-actions form {
+    display: block;
+    width: 100%;
+  }
+
+  body.admin .table-actions button {
+    width: 100%;
+    min-height: 2.75rem;
+  }
+
+  body.admin form[action*="/delete"] > button[type="submit"] {
+    width: 100%;
+    max-width: 22rem;
+    min-height: 2.75rem;
+  }
+
+  body.admin th,
+  body.admin td {
+    padding: 0.55rem 0.5rem;
+    font-size: 0.88rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .result-hit {
+    flex-direction: column;
+  }
+
+  .hazard-list {
+    padding-left: 1.1rem;
+    word-break: break-word;
   }
 }

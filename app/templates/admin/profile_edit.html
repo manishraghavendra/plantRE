@@ -61,8 +61,9 @@
 </form>
 
 <h2 style="font-size:1.1rem;margin-top:2rem">Steps</h2>
-<p><a class="btn primary" href="/admin/profiles/{{ profile.id }}/steps/new">Add step</a></p>
+<p class="admin-actions-row"><a class="btn primary" href="/admin/profiles/{{ profile.id }}/steps/new">Add step</a></p>
 {% if profile.steps %}
+<div class="table-responsive">
 <table>
   <thead><tr><th>#</th><th>Title</th><th></th></tr></thead>
   <tbody>
@@ -70,9 +71,9 @@
     <tr>
       <td>{{ s.step_order }}</td>
       <td>{{ s.title }}</td>
-      <td>
+      <td class="table-actions">
         <a href="/admin/steps/{{ s.id }}/edit">Edit</a>
-        <form style="display:inline" method="post" action="/admin/steps/{{ s.id }}/delete" onsubmit="return confirm('Delete this step?');">
+        <form method="post" action="/admin/steps/{{ s.id }}/delete" onsubmit="return confirm('Delete this step?');">
           <button type="submit" class="danger">Delete</button>
         </form>
       </td>
@@ -80,13 +81,15 @@
     {% endfor %}
   </tbody>
 </table>
+</div>
 {% else %}
 <p class="muted">No steps yet.</p>
 {% endif %}
 
 <h2 style="font-size:1.1rem;margin-top:2rem">Requirements</h2>
-<p><a class="btn primary" href="/admin/profiles/{{ profile.id }}/requirements/new">Add requirement</a></p>
+<p class="admin-actions-row"><a class="btn primary" href="/admin/profiles/{{ profile.id }}/requirements/new">Add requirement</a></p>
 {% if profile.requirements %}
+<div class="table-responsive">
 <table>
   <thead><tr><th>Category</th><th>Values</th><th></th></tr></thead>
   <tbody>
@@ -94,9 +97,9 @@
     <tr>
       <td>{{ r.category }}</td>
       <td>{{ r.value_min }} – {{ r.value_max }} {{ r.unit or "" }} {% if r.notes %}<br><span class="muted">{{ r.notes }}</span>{% endif %}</td>
-      <td>
+      <td class="table-actions">
         <a href="/admin/requirements/{{ r.id }}/edit">Edit</a>
-        <form style="display:inline" method="post" action="/admin/requirements/{{ r.id }}/delete" onsubmit="return confirm('Delete?');">
+        <form method="post" action="/admin/requirements/{{ r.id }}/delete" onsubmit="return confirm('Delete?');">
           <button type="submit" class="danger">Delete</button>
         </form>
       </td>
@@ -104,12 +107,14 @@
     {% endfor %}
   </tbody>
 </table>
+</div>
 {% else %}
 <p class="muted">No requirements yet.</p>
 {% endif %}
 
 <h2 style="font-size:1.1rem;margin-top:2rem">Hazards linked to this profile</h2>
 {% if profile_hazards %}
+<div class="table-responsive">
 <table>
   <thead><tr><th>Hazard</th><th>Kind</th><th>Mitigation</th><th></th></tr></thead>
   <tbody>
@@ -118,7 +123,7 @@
       <td>{{ row.hazard_name }}</td>
       <td>{% if row.hazard_kind == 'growing_issue' %}Growing issue{% else %}Food safety{% endif %}</td>
       <td>{{ row.mitigation_detail or "" }} {% if row.evidence_notes %}<br><span class="muted">{{ row.evidence_notes }}</span>{% endif %}</td>
-      <td>
+      <td class="table-actions">
         <form method="post" action="/admin/profiles/{{ profile.id }}/hazards/{{ row.hazard_id }}/delete" onsubmit="return confirm('Remove this hazard link?');">
           <button type="submit" class="danger">Remove</button>
         </form>
@@ -127,6 +132,7 @@
     {% endfor %}
   </tbody>
 </table>
+</div>
 {% else %}
 <p class="muted">No hazards linked.</p>
 {% endif %}

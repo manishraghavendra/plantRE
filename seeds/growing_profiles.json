@@ -1,73 +1,5 @@
 [
   {
-    "plant_scientific_name": "Solanum tuberosum",
-    "environment_code": "drought",
-    "medium_name": "Container",
-    "hardiness_zone_min": 3,
-    "hardiness_zone_max": 10,
-    "summary": "Use deep containers and mulch to reduce evaporation; favor early varieties; prioritize soil moisture monitoring.",
-    "difficulty": "intermediate",
-    "confidence_level": "field_practice",
-    "last_reviewed_at": null,
-    "steps": [
-      {
-        "step_order": 1,
-        "title": "Container depth",
-        "body": "Choose at least 15–20 gallon equivalent depth for maincrop types; deeper is better for drought buffering.",
-        "duration_days": null,
-        "equipment": null
-      },
-      {
-        "step_order": 2,
-        "title": "Mulch",
-        "body": "Apply organic mulch after plants emerge to cut surface evaporation.",
-        "duration_days": null,
-        "equipment": "straw or leaf mulch"
-      }
-    ],
-    "requirements": [
-      {
-        "category": "light",
-        "value_min": 6.0,
-        "value_max": 10.0,
-        "unit": "hours_full_sun",
-        "notes": "Full sun where possible."
-      },
-      {
-        "category": "water",
-        "value_min": null,
-        "value_max": null,
-        "unit": "deficit_irrigation_notes",
-        "notes": "Irrigate deeply but less frequently once established; avoid constant shallow wetting."
-      }
-    ],
-    "hazard_links": [
-      {
-        "hazard_name": "Fungal diseases",
-        "mitigation_detail": "Improve airflow in dense foliage; avoid wetting leaves late in the day; remove infected lower leaves per local potato disease IPM.",
-        "evidence_notes": null
-      },
-      {
-        "hazard_name": "Green tubers (solanine)",
-        "mitigation_detail": "Hill soil to exclude light from tubers; store harvested tubers in darkness.",
-        "evidence_notes": "Align with local extension potato storage guidance."
-      },
-      {
-        "hazard_name": "Root rot / overwatering",
-        "mitigation_detail": "Use free-draining container mix; empty saucers; water deeply but only when soil dries appropriately for the growth stage.",
-        "evidence_notes": null
-      }
-    ],
-    "citations": [
-      {
-        "source_title": "Extension drought gardening principles (example)",
-        "target": "profile",
-        "quote": null,
-        "page": null
-      }
-    ]
-  },
-  {
     "plant_scientific_name": "Amaranthus cruentus",
     "environment_code": "drought",
     "medium_name": "In-ground soil",
@@ -157,54 +89,234 @@
     ]
   },
   {
-    "plant_scientific_name": "Vigna unguiculata",
-    "environment_code": "high_radiation_background_speculative",
-    "medium_name": "Unspecified",
+    "plant_scientific_name": "Phalaenopsis spp",
+    "environment_code": "home_garden",
+    "medium_name": "Container",
     "hardiness_zone_min": null,
     "hardiness_zone_max": null,
-    "summary": "SPECULATIVE: legumes are studied for stress physiology; this row is for schema demo only—not prescriptive for radiation disasters.",
-    "difficulty": "advanced",
+    "summary": "Epiphytic orchid that grows in indirect light with high humidity. Requires well-draining bark medium and careful watering to avoid root rot.",
+    "difficulty": "intermediate",
     "confidence_level": "speculative",
     "last_reviewed_at": null,
     "steps": [
       {
         "step_order": 1,
-        "title": "Disclaimer",
-        "body": "Do not use this text for safety decisions; consult radiological agriculture experts and official guidance.",
-        "duration_days": null,
-        "equipment": null
+        "title": "Potting",
+        "body": "Use orchid bark mix in a well-draining pot with airflow around roots.",
+        "duration_days": 1,
+        "equipment": "Orchid bark mix, ventilated pot"
+      },
+      {
+        "step_order": 2,
+        "title": "Placement and light",
+        "body": "Place the orchid in bright, indirect light. Avoid direct sunlight as it can burn the leaves.",
+        "duration_days": 0,
+        "equipment": "Window space, curtain (optional)"
+      },
+      {
+        "step_order": 3,
+        "title": "Watering",
+        "body": "Water when roots turn silvery or dry. Soak thoroughly and allow complete drainage. Do not let water sit in the pot.",
+        "duration_days": 2,
+        "equipment": "Water source"
+      },
+      {
+        "step_order": 4,
+        "title": "Humidity control",
+        "body": "Maintain humidity around 50–70 percent using misting or a humidity tray. Ensure airflow to prevent fungal issues.",
+        "duration_days": 0,
+        "equipment": "Spray bottle or humidity tray"
+      },
+      {
+        "step_order": 5,
+        "title": "Feeding",
+        "body": "Apply diluted orchid fertilizer every 2–4 weeks during active growth.",
+        "duration_days": 0,
+        "equipment": "Orchid fertilizer"
+      },
+      {
+        "step_order": 6,
+        "title": "Flowering and care",
+        "body": "Encourage blooming by slightly lowering night temperature. Remove dead flowers and trim spikes after blooming.",
+        "duration_days": 30,
+        "equipment": "Pruning scissors"
       }
     ],
-    "requirements": [],
-    "hazard_links": [],
-    "citations": [
-      {
-        "source_title": "Plant radiobiology review (example)",
-        "target": "profile",
-        "quote": null,
-        "page": null
-      }
-    ]
-  },
-  {
-    "plant_scientific_name": "sdfasdfasdf",
-    "environment_code": "container_only",
-    "medium_name": "Aquaponics",
-    "hardiness_zone_min": null,
-    "hardiness_zone_max": null,
-    "summary": null,
-    "difficulty": "beginner",
-    "confidence_level": "speculative",
-    "last_reviewed_at": null,
-    "steps": [],
     "requirements": [],
     "hazard_links": [
       {
-        "hazard_name": "Foodborne pathogens (sprouts and greens)",
-        "mitigation_detail": null,
+        "hazard_name": "Pests",
+        "mitigation_detail": "Avoid water accumulation in roots, ensure airflow, and inspect regularly for pests like mites or aphids.",
         "evidence_notes": null
       }
     ],
-    "citations": []
+    "citations": [],
+    "climate_context": "Tropical, humid environments; thrives indoors in warm climates. Köppen: Af, Am."
+  },
+  {
+    "plant_scientific_name": "Phalaenopsis spp. (dyed cultivar)",
+    "environment_code": "home_garden",
+    "medium_name": "Container",
+    "hardiness_zone_min": null,
+    "hardiness_zone_max": null,
+    "summary": "A dyed variant of Phalaenopsis orchid. Requires indirect light, high humidity, and a well-draining bark medium. Blue coloration fades after blooming.",
+    "difficulty": "intermediate",
+    "confidence_level": "speculative",
+    "last_reviewed_at": null,
+    "steps": [
+      {
+        "step_order": 1,
+        "title": "Potting",
+        "body": "Use orchid bark mix in a well-draining container with airflow around roots.",
+        "duration_days": 1,
+        "equipment": "Orchid bark mix, ventilated pot"
+      },
+      {
+        "step_order": 2,
+        "title": "Light",
+        "body": "Place in bright, indirect light. Avoid direct sunlight.",
+        "duration_days": 0,
+        "equipment": "Window space"
+      },
+      {
+        "step_order": 3,
+        "title": "Watering",
+        "body": "Water when roots turn silvery. Allow full drainage and avoid water buildup.",
+        "duration_days": 0,
+        "equipment": "water source"
+      },
+      {
+        "step_order": 4,
+        "title": "Humidity",
+        "body": "Maintain 50–70 percent humidity with airflow.",
+        "duration_days": 0,
+        "equipment": "pray bottle or humidity tray"
+      },
+      {
+        "step_order": 5,
+        "title": "Feeding",
+        "body": "Use diluted orchid fertilizer every 2–4 weeks.",
+        "duration_days": 0,
+        "equipment": "Orchid fertilizer"
+      },
+      {
+        "step_order": 6,
+        "title": "Flower cycle",
+        "body": "Expect blue flowers only once; future blooms return to natural color (usually white).",
+        "duration_days": 30,
+        "equipment": "None"
+      }
+    ],
+    "requirements": [],
+    "hazard_links": [
+      {
+        "hazard_name": "Root rot / overwatering",
+        "mitigation_detail": "Avoid excess water, ensure airflow, and monitor for pests regularly.",
+        "evidence_notes": null
+      }
+    ],
+    "citations": [],
+    "climate_context": "Tropical, humid indoor conditions. Thrives in warm environments with stable humidity."
+  },
+  {
+    "plant_scientific_name": "Solanum tuberosum",
+    "environment_code": "home_garden",
+    "medium_name": "In-ground soil",
+    "hardiness_zone_min": null,
+    "hardiness_zone_max": null,
+    "summary": "Cool-season crop grown for underground tubers. Requires loose, well-drained soil and consistent moisture. Sensitive to heat and frost.",
+    "difficulty": "beginner",
+    "confidence_level": "speculative",
+    "last_reviewed_at": null,
+    "steps": [
+      {
+        "step_order": 1,
+        "title": "Planting",
+        "body": "Plant seed potatoes 5–10 cm deep in loose soil with eyes facing upward.",
+        "duration_days": 7,
+        "equipment": "Seed potatoes, soil"
+      },
+      {
+        "step_order": 2,
+        "title": "Sprouting",
+        "body": "Allow shoots to emerge; ensure full sunlight and moderate watering.",
+        "duration_days": 14,
+        "equipment": "Water source"
+      },
+      {
+        "step_order": 3,
+        "title": "Growth",
+        "body": "Maintain soil moisture and remove weeds. Avoid waterlogging.",
+        "duration_days": 20,
+        "equipment": "Water source"
+      },
+      {
+        "step_order": 4,
+        "title": "Hilling",
+        "body": "Pile soil around the base of plants to cover developing tubers and prevent greening.",
+        "duration_days": 15,
+        "equipment": "Soil, hoe"
+      },
+      {
+        "step_order": 5,
+        "title": "Maturation",
+        "body": "Reduce watering as plants mature. Leaves will begin to yellow.",
+        "duration_days": 20,
+        "equipment": "None"
+      },
+      {
+        "step_order": 6,
+        "title": "Harvest",
+        "body": "Harvest when foliage dies back. Dig carefully to avoid damaging tubers.",
+        "duration_days": 7,
+        "equipment": "Shovel or fork"
+      }
+    ],
+    "requirements": [
+      {
+        "category": "harvest",
+        "value_min": 70.0,
+        "value_max": 120.0,
+        "unit": "days",
+        "notes": "Harvest time depends on variety and growing conditions."
+      },
+      {
+        "category": "light",
+        "value_min": 6.0,
+        "value_max": 8.0,
+        "unit": "hours/day",
+        "notes": "Full sun required for optimal tuber development."
+      },
+      {
+        "category": "spacing",
+        "value_min": 30.0,
+        "value_max": 50.0,
+        "unit": "Cm",
+        "notes": "Space plants adequately to allow tuber expansion."
+      },
+      {
+        "category": "temp",
+        "value_min": 15.0,
+        "value_max": 25.0,
+        "unit": "°C",
+        "notes": "Cool-season crop; high temperatures reduce yield."
+      },
+      {
+        "category": "water",
+        "value_min": 2.0,
+        "value_max": 5.0,
+        "unit": "cm/week",
+        "notes": "Moderate watering; avoid waterlogging. Increase during tuber formation."
+      }
+    ],
+    "hazard_links": [
+      {
+        "hazard_name": "Green tubers (solanine)",
+        "mitigation_detail": "Keep tubers covered to prevent greening. Avoid overwatering and ensure airflow. Monitor for pests and remove affected plants early.",
+        "evidence_notes": null
+      }
+    ],
+    "citations": [],
+    "climate_context": "Temperate climates; grows best in 15–25°C. Common in highland and cooler regions. Köppen: Cfb, Cwb."
   }
 ]

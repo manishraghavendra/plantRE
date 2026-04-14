@@ -30,48 +30,46 @@
     "image_url": "https://www.brookgreen.org/sites/default/files/styles/fp_landscape_1920x1440/public/Brassica%20oleracea%20%27Champion%27%20%28Acephala%20Group%29%20foliage.jpg.webp?itok=LwlrB2Od"
   },
   {
+    "scientific_name": "Phalaenopsis spp",
+    "common_names": [
+      "Red orchid",
+      "Moth orchid"
+    ],
+    "plant_type_name": "Flowering plant (ornamental)",
+    "life_cycle": "perennial",
+    "native_regions": "Southeast Asia, Philippines, Indonesia",
+    "edible_parts": [
+      "none"
+    ],
+    "toxicity_notes": "Non-toxic to humans; mild risk to pets if ingested",
+    "image_url": "https://m.media-amazon.com/images/I/511BmNtvN0L.jpg"
+  },
+  {
+    "scientific_name": "Phalaenopsis spp. (dyed cultivar)",
+    "common_names": [
+      "Blue Orchid"
+    ],
+    "plant_type_name": "Flowering plant (ornamental)",
+    "life_cycle": "perennial",
+    "native_regions": "Southeast Asia (origin)",
+    "edible_parts": [
+      "none"
+    ],
+    "toxicity_notes": "Non-toxic to humans. Blue color is usually artificial dye injected into the plant; future blooms will be white.",
+    "image_url": "https://www.gardenia.net/wp-content/uploads/2024/08/shutterstock_270878309.jpg"
+  },
+  {
     "scientific_name": "Solanum tuberosum",
     "common_names": [
-      "potato",
-      "Irish potato"
+      "Potato"
     ],
     "plant_type_name": "Root and tuber",
     "life_cycle": "annual",
-    "native_regions": "Andes; worldwide cultivation",
+    "native_regions": null,
     "edible_parts": [
-      "tuber"
+      "Tuber"
     ],
-    "toxicity_notes": "Green tubers and sprouts contain elevated solanine; discard or peel per extension advice.",
-    "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/11/Valentiny_Red_Pontiac.jpg/320px-Valentiny_Red_Pontiac.jpg"
-  },
-  {
-    "scientific_name": "Vigna unguiculata",
-    "common_names": [
-      "cowpea",
-      "black-eyed pea"
-    ],
-    "plant_type_name": "Legume",
-    "life_cycle": "annual",
-    "native_regions": "Africa; widely tropical/subtropical",
-    "edible_parts": [
-      "seed",
-      "pod",
-      "leaf"
-    ],
-    "toxicity_notes": null,
-    "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d8/Vigna_unguiculata_BL.jpeg/320px-Vigna_unguiculata_BL.jpeg"
-  },
-  {
-    "scientific_name": "sdfasdfasdf",
-    "common_names": [
-      "asdfasdf"
-    ],
-    "plant_type_name": "Fruit (woody or vine)",
-    "life_cycle": "annual",
-    "native_regions": "zxcvasdfawsd",
-    "edible_parts": [
-      "cvzxcv"
-    ],
-    "toxicity_notes": "fasdhgadsfvazsdagsfhaerdtfbaerfvvsedrfhsedfhgsdfg"
+    "toxicity_notes": "Green parts and sprouted tubers contain solanine and should not be eaten.",
+    "image_url": "https://plantinfo.co.za/wp-content/uploads/2020/07/1374849788_main-potatoes-1.jpg"
   }
 ]

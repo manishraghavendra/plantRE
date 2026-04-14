@@ -1,7 +1,8 @@
 {% extends "admin/base.html" %}
 {% block content %}
 <h1>Plants</h1>
-<p><a class="btn primary" href="/admin/plants/new">New plant</a></p>
+<p class="admin-actions-row"><a class="btn primary" href="/admin/plants/new">New plant</a></p>
+<div class="table-responsive">
 <table>
   <thead><tr><th></th><th>Name</th><th>Type</th><th>Life</th><th></th></tr></thead>
   <tbody>
@@ -11,11 +12,11 @@
       <td><strong>{{ p.scientific_name }}</strong></td>
       <td>{{ p.plant_type.name if p.plant_type else "" }}</td>
       <td>{{ p.life_cycle }}</td>
-      <td>
-        <a href="/plant/{{ p.id }}">View</a> ·
-        <a href="/admin/plants/{{ p.id }}/profiles">Profiles</a> ·
+      <td class="table-actions">
+        <a href="/plant/{{ p.id }}">View</a>
+        <a href="/admin/plants/{{ p.id }}/profiles">Profiles</a>
         <a href="/admin/plants/{{ p.id }}/edit">Edit</a>
-        <form style="display:inline" method="post" action="/admin/plants/{{ p.id }}/delete" onsubmit="return confirm('Delete this plant and ALL its growing profiles?');">
+        <form method="post" action="/admin/plants/{{ p.id }}/delete" onsubmit="return confirm('Delete this plant and ALL its growing profiles?');">
           <button type="submit" class="danger">Delete</button>
         </form>
       </td>
@@ -23,4 +24,5 @@
     {% endfor %}
   </tbody>
 </table>
+</div>
 {% endblock %}

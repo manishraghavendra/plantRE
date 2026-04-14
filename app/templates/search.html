@@ -4,7 +4,7 @@
 <div class="page-card">
   <h1>Search</h1>
   <p class="lead">Find text across your <strong>database</strong>: plants, profiles, steps, requirements, environments, growing media, hazards, sources, and plant categories.</p>
-  <form class="search-form" action="/search" method="get" style="max-width:28rem;margin-top:0.5rem">
+  <form class="search-form search-form--inline" action="/search" method="get">
     <input type="search" name="q" value="{{ query | e }}" placeholder="Try: drought, potato, kale…" autofocus />
     <button type="submit">Go</button>
   </form>

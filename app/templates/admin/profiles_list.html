@@ -2,10 +2,11 @@
 {% block content %}
 <h1>Profiles — {{ plant.scientific_name }}</h1>
 <p class="muted"><a href="/admin/plants">← Plants</a> · <a href="/plant/{{ plant.id }}">Public view</a></p>
-<p><a class="btn primary" href="/admin/plants/{{ plant.id }}/profiles/new">New profile</a></p>
+<p class="admin-actions-row"><a class="btn primary" href="/admin/plants/{{ plant.id }}/profiles/new">New profile</a></p>
 {% if not profiles %}
 <p>No profiles yet. Add one for an environment + growing medium combination.</p>
 {% else %}
+<div class="table-responsive">
 <table>
   <thead><tr><th>Environment</th><th>Medium</th><th>Confidence</th><th>Steps</th><th></th></tr></thead>
   <tbody>
@@ -20,5 +21,6 @@
     {% endfor %}
   </tbody>
 </table>
+</div>
 {% endif %}
 {% endblock %}

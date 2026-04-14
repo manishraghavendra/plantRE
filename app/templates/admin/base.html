@@ -4,6 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>{{ title }} — Admin</title>
+  <link rel="icon" type="image/png" sizes="32x32" href="https://manish.rocks/favicon-32x32.png?v=4914ab79911de1b22c6b805fdc3a4d70" />
   <link rel="stylesheet" href="/static/app.css" />
 </head>
 <body class="admin">
@@ -17,7 +18,7 @@
       <a href="/about">About</a>
       <a href="/">Public site</a>
       <a href="/docs">API</a>
-      <form class="search-form" action="/search" method="get" style="margin-left:auto;max-width:16rem" role="search">
+      <form class="search-form admin-nav-search" action="/search" method="get" role="search">
         <input type="search" name="q" placeholder="Search database…" autocomplete="off" />
         <button type="submit">Go</button>
       </form>
