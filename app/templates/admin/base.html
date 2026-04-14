@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>{{ title }} — Admin</title>
+  <link rel="stylesheet" href="/static/app.css" />
+</head>
+<body class="admin">
+  <div class="admin-shell">
+    <nav class="admin-nav">
+      <strong>CMS</strong>
+      <a href="/admin/">Dashboard</a>
+      <a href="/admin/plants">Plants</a>
+      <a href="/admin/sources">Sources</a>
+      <span class="muted">|</span>
+      <a href="/about">About</a>
+      <a href="/">Public site</a>
+      <a href="/docs">API</a>
+      <form class="search-form" action="/search" method="get" style="margin-left:auto;max-width:16rem" role="search">
+        <input type="search" name="q" placeholder="Search database…" autocomplete="off" />
+        <button type="submit">Go</button>
+      </form>
+    </nav>
+    {% if error %}
+    <div class="err">{{ error }}</div>
+    {% endif %}
+    {% block content %}{% endblock %}
+  </div>
+</body>
+</html>

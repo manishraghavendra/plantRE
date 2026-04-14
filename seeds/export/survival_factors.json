@@ -1,0 +1,34 @@
+[
+  {
+    "name": "Energy for grow systems",
+    "description": "Pumps, lights, climate control under grid stress."
+  },
+  {
+    "name": "Nutrition completeness",
+    "description": "Calories vs micronutrients; anti-nutrients; food safety."
+  },
+  {
+    "name": "Pest and disease pressure",
+    "description": "Reduced access to inputs increases IPM difficulty."
+  },
+  {
+    "name": "Radiation exposure",
+    "description": "Ionizing radiation to plants and food chain (complex; cite sources)."
+  },
+  {
+    "name": "Seed and genetic resilience",
+    "description": "Open-pollinated seed saving vs hybrid dependency."
+  },
+  {
+    "name": "Soil contamination",
+    "description": "Heavy metals, hydrocarbons, pathogens in media."
+  },
+  {
+    "name": "Temperature extremes",
+    "description": "Heat waves, cold snaps, unheated structures."
+  },
+  {
+    "name": "Water security",
+    "description": "Quantity and quality of irrigation or drinking-adjacent water."
+  }
+]

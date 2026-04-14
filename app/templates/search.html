@@ -1,0 +1,172 @@
+{% extends "public_base.html" %}
+{% block title %}Search{% if results and results.get('query') %} - {{ results.query }}{% endif %}{% endblock %}
+{% block content %}
+<div class="page-card">
+  <h1>Search</h1>
+  <p class="lead">Find text across your <strong>database</strong>: plants, profiles, steps, requirements, environments, growing media, hazards, sources, and plant categories.</p>
+  <form class="search-form" action="/search" method="get" style="max-width:28rem;margin-top:0.5rem">
+    <input type="search" name="q" value="{{ query | e }}" placeholder="Try: drought, potato, kale…" autofocus />
+    <button type="submit">Go</button>
+  </form>
+  {% if message %}
+  <p class="muted" style="margin-top:1rem">{{ message }}</p>
+  {% endif %}
+</div>
+
+{% if results and results.ok %}
+<div class="page-card">
+  <p class="muted" style="margin:0 0 0.5rem"><strong>{{ results.total }}</strong> match{% if results.total != 1 %}es{% endif %} for “{{ results.query }}”</p>
+
+  {% if results.plants %}
+  <div class="search-section">
+    <h2>Plants</h2>
+    <ul class="result-list">
+      {% for it in results.plants %}
+      <li class="result-hit">
+        {% if it.image_url %}<img src="{{ it.image_url }}" alt="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" />{% endif %}
+        <div class="hit-body">
+          <a href="{{ it.url }}"><strong>{{ it.title }}</strong></a>
+          <span class="result-meta"> · {{ it.meta }}</span>
+          {% if it.snippet %}<div class="snippet muted">{{ it.snippet }}</div>{% endif %}
+        </div>
+      </li>
+      {% endfor %}
+    </ul>
+  </div>
+  {% endif %}
+
+  {% if results.profiles %}
+  <div class="search-section">
+    <h2>Growing profiles</h2>
+    <ul class="result-list">
+      {% for it in results.profiles %}
+      <li class="result-hit">
+        {% if it.image_url %}<img src="{{ it.image_url }}" alt="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" />{% endif %}
+        <div class="hit-body">
+          <a href="{{ it.url }}"><strong>{{ it.title }}</strong></a>
+          <span class="result-meta"> · {{ it.meta }}</span>
+          {% if it.snippet %}<div class="snippet muted">{{ it.snippet }}</div>{% endif %}
+        </div>
+      </li>
+      {% endfor %}
+    </ul>
+  </div>
+  {% endif %}
+
+  {% if results.steps %}
+  <div class="search-section">
+    <h2>Steps</h2>
+    <ul class="result-list">
+      {% for it in results.steps %}
+      <li class="result-hit">
+        {% if it.image_url %}<img src="{{ it.image_url }}" alt="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" />{% endif %}
+        <div class="hit-body">
+          <a href="{{ it.url }}"><strong>{{ it.title }}</strong></a>
+          <span class="result-meta"> · {{ it.meta }}</span>
+          {% if it.snippet %}<div class="snippet muted">{{ it.snippet }}</div>{% endif %}
+        </div>
+      </li>
+      {% endfor %}
+    </ul>
+  </div>
+  {% endif %}
+
+  {% if results.requirements %}
+  <div class="search-section">
+    <h2>Requirements</h2>
+    <ul class="result-list">
+      {% for it in results.requirements %}
+      <li class="result-hit">
+        {% if it.image_url %}<img src="{{ it.image_url }}" alt="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" />{% endif %}
+        <div class="hit-body">
+          <a href="{{ it.url }}"><strong>{{ it.title }}</strong></a>
+          <span class="result-meta"> · {{ it.meta }}</span>
+          {% if it.snippet %}<div class="snippet muted">{{ it.snippet }}</div>{% endif %}
+        </div>
+      </li>
+      {% endfor %}
+    </ul>
+  </div>
+  {% endif %}
+
+  {% if results.environments %}
+  <div class="search-section">
+    <h2>Environments</h2>
+    <ul class="result-list">
+      {% for it in results.environments %}
+      <li>
+        <a href="{{ it.url }}"><strong>{{ it.title }}</strong></a>
+        <span class="result-meta"> · {{ it.meta }}</span>
+        {% if it.snippet %}<div class="snippet muted">{{ it.snippet }}</div>{% endif %}
+      </li>
+      {% endfor %}
+    </ul>
+  </div>
+  {% endif %}
+
+  {% if results.media %}
+  <div class="search-section">
+    <h2>Growing media</h2>
+    <ul class="result-list">
+      {% for it in results.media %}
+      <li>
+        <a href="{{ it.url }}"><strong>{{ it.title }}</strong></a>
+        <span class="result-meta"> · {{ it.meta }}</span>
+        {% if it.snippet %}<div class="snippet muted">{{ it.snippet }}</div>{% endif %}
+      </li>
+      {% endfor %}
+    </ul>
+  </div>
+  {% endif %}
+
+  {% if results.hazards %}
+  <div class="search-section">
+    <h2>Hazards &amp; growing issues</h2>
+    <ul class="result-list">
+      {% for it in results.hazards %}
+      <li>
+        <a href="{{ it.url }}"><strong>{{ it.title }}</strong></a>
+        <span class="result-meta"> · {{ it.meta }}</span>
+        {% if it.snippet %}<div class="snippet muted">{{ it.snippet }}</div>{% endif %}
+      </li>
+      {% endfor %}
+    </ul>
+  </div>
+  {% endif %}
+
+  {% if results.sources %}
+  <div class="search-section">
+    <h2>Sources</h2>
+    <ul class="result-list">
+      {% for it in results.sources %}
+      <li>
+        <a href="{{ it.url }}"><strong>{{ it.title }}</strong></a>
+        <span class="result-meta"> · {{ it.meta }}</span>
+        {% if it.snippet %}<div class="snippet muted">{{ it.snippet }}</div>{% endif %}
+      </li>
+      {% endfor %}
+    </ul>
+  </div>
+  {% endif %}
+
+  {% if results.plant_types %}
+  <div class="search-section">
+    <h2>Plant categories</h2>
+    <ul class="result-list">
+      {% for it in results.plant_types %}
+      <li>
+        <a href="{{ it.url }}"><strong>{{ it.title }}</strong></a>
+        <span class="result-meta"> · {{ it.meta }}</span>
+        {% if it.snippet %}<div class="snippet muted">{{ it.snippet }}</div>{% endif %}
+      </li>
+      {% endfor %}
+    </ul>
+  </div>
+  {% endif %}
+
+  {% if results.total == 0 %}
+  <p class="muted">No matches. Try another word.</p>
+  {% endif %}
+</div>
+{% endif %}
+{% endblock %}

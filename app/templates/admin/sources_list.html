@@ -1,0 +1,23 @@
+{% extends "admin/base.html" %}
+{% block content %}
+<h1>Sources</h1>
+<p><a class="btn primary" href="/admin/sources/new">New source</a></p>
+<table>
+  <thead><tr><th>Title</th><th>Type</th><th>Year</th><th></th></tr></thead>
+  <tbody>
+    {% for s in sources %}
+    <tr>
+      <td>{% if s.url %}<a href="{{ s.url }}">{{ s.title }}</a>{% else %}{{ s.title }}{% endif %}</td>
+      <td>{{ s.source_type }}</td>
+      <td>{{ s.year or "" }}</td>
+      <td>
+        <a href="/admin/sources/{{ s.id }}/edit">Edit</a>
+        <form style="display:inline" method="post" action="/admin/sources/{{ s.id }}/delete" onsubmit="return confirm('Delete this source? Citations may be removed by FK cascade.');">
+          <button type="submit" class="danger">Delete</button>
+        </form>
+      </td>
+    </tr>
+    {% endfor %}
+  </tbody>
+</table>
+{% endblock %}

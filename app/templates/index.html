@@ -1,0 +1,31 @@
+{% extends "public_base.html" %}
+{% block content %}
+<div class="page-card">
+  <h1>Plants</h1>
+  <p class="lead">Browse species and how they are grown under different conditions. Use the search bar above to find anything in the database.</p>
+  <div class="toolbar">
+    <a href="/admin/">Edit in CMS</a>
+    <a href="/docs">API docs</a>
+  </div>
+</div>
+
+<div class="plant-grid">
+  {% for p in plants %}
+  <a class="plant-card" href="/plant/{{ p.id }}">
+    {% if p.image_url %}
+    <img class="plant-thumb" src="{{ p.image_url }}" alt="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" />
+    {% endif %}
+    <div class="plant-card-text">
+      <strong>{{ p.scientific_name }}</strong>
+      {% if p.common_names %}
+      <span>{{ p.common_names | join(", ") }}</span>
+      {% else %}
+      <span class="muted">View profiles</span>
+      {% endif %}
+    </div>
+  </a>
+  {% endfor %}
+</div>
+
+<p class="muted" style="padding-top:0.5rem">Speculative scenarios are labeled on plant pages. Prefer authoritative sources for real decisions.</p>
+{% endblock %}

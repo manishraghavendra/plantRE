@@ -1,0 +1,10 @@
+{% extends "admin/base.html" %}
+{% block content %}
+<h1>Admin dashboard</h1>
+<p class="muted">Edit plants, growing profiles, steps, and sources from the browser. Changes go directly to the SQLite database (not the JSON seed files).</p>
+<ul>
+  <li><a href="/admin/plants">Manage plants</a> — add or edit species, then open profiles for each plant.</li>
+  <li><a href="/admin/sources">Manage sources</a> — references used for profile citations.</li>
+</ul>
+<p class="muted">Tip: after bulk edits, use your own backups of <code>data/plant_extreme.db</code>. <code>POST /api/seed</code> still reloads from JSON and will overwrite CMS changes.</p>
+{% endblock %}

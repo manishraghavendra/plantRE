@@ -1,0 +1,26 @@
+{% extends "admin/base.html" %}
+{% block content %}
+<h1>Plants</h1>
+<p><a class="btn primary" href="/admin/plants/new">New plant</a></p>
+<table>
+  <thead><tr><th></th><th>Name</th><th>Type</th><th>Life</th><th></th></tr></thead>
+  <tbody>
+    {% for p in plants %}
+    <tr>
+      <td style="width:3.5rem">{% if p.image_url %}<img src="{{ p.image_url }}" alt="" class="admin-plant-thumb" loading="lazy" />{% endif %}</td>
+      <td><strong>{{ p.scientific_name }}</strong></td>
+      <td>{{ p.plant_type.name if p.plant_type else "" }}</td>
+      <td>{{ p.life_cycle }}</td>
+      <td>
+        <a href="/plant/{{ p.id }}">View</a> ·
+        <a href="/admin/plants/{{ p.id }}/profiles">Profiles</a> ·
+        <a href="/admin/plants/{{ p.id }}/edit">Edit</a>
+        <form style="display:inline" method="post" action="/admin/plants/{{ p.id }}/delete" onsubmit="return confirm('Delete this plant and ALL its growing profiles?');">
+          <button type="submit" class="danger">Delete</button>
+        </form>
+      </td>
+    </tr>
+    {% endfor %}
+  </tbody>
+</table>
+{% endblock %}

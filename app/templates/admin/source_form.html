@@ -1,0 +1,21 @@
+{% extends "admin/base.html" %}
+{% block content %}
+<h1>{{ title }}</h1>
+<form method="post" action="{{ '/admin/sources/new' if not source else '/admin/sources/' ~ source.id ~ '/edit' }}">
+  <label>Title <input type="text" name="title" required value="{{ source.title if source else '' }}" /></label>
+  <label>URL <input type="url" name="url" value="{{ source.url if source else '' }}" placeholder="https://..." /></label>
+  <label>Publisher <input type="text" name="publisher" value="{{ source.publisher if source else '' }}" /></label>
+  <label>Year <input type="text" name="year" value="{{ source.year if source else '' }}" /></label>
+  <label>Type
+    <select name="source_type" required>
+      {% for t in source_types %}
+      <option value="{{ t }}" {% if source and source.source_type == t %}selected{% endif %}>{{ t }}</option>
+      {% endfor %}
+    </select>
+  </label>
+  <div class="actions">
+    <button type="submit" class="primary">Save</button>
+    <a class="btn" href="/admin/sources">Cancel</a>
+  </div>
+</form>
+{% endblock %}

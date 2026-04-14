@@ -1,0 +1,34 @@
+[
+  {
+    "name": "Fruit (woody or vine)",
+    "description": "Perennial fruits; longer establishment."
+  },
+  {
+    "name": "Herb and aromatic",
+    "description": "Flavor, medicine, pest masking."
+  },
+  {
+    "name": "Leafy vegetable",
+    "description": "Greens for vitamins and minerals."
+  },
+  {
+    "name": "Legume",
+    "description": "Nitrogen-fixing protein crops."
+  },
+  {
+    "name": "Microgreen",
+    "description": "Fast-turnover immature greens."
+  },
+  {
+    "name": "Mushroom",
+    "description": "Fungi on substrate; sterility critical."
+  },
+  {
+    "name": "Root and tuber",
+    "description": "Underground storage organs; high calorie density per area."
+  },
+  {
+    "name": "Staple grain",
+    "description": "Cereal and pseudo-cereal staples for calories."
+  }
+]

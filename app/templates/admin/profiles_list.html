@@ -1,0 +1,24 @@
+{% extends "admin/base.html" %}
+{% block content %}
+<h1>Profiles — {{ plant.scientific_name }}</h1>
+<p class="muted"><a href="/admin/plants">← Plants</a> · <a href="/plant/{{ plant.id }}">Public view</a></p>
+<p><a class="btn primary" href="/admin/plants/{{ plant.id }}/profiles/new">New profile</a></p>
+{% if not profiles %}
+<p>No profiles yet. Add one for an environment + growing medium combination.</p>
+{% else %}
+<table>
+  <thead><tr><th>Environment</th><th>Medium</th><th>Confidence</th><th>Steps</th><th></th></tr></thead>
+  <tbody>
+    {% for r in profiles %}
+    <tr>
+      <td>{{ r.env.name if r.env else "" }}{% if r.env and r.env.is_speculative %} <span class="muted">(speculative)</span>{% endif %}</td>
+      <td>{{ r.medium.name if r.medium else "" }}</td>
+      <td>{{ r.confidence }}</td>
+      <td>{{ r.step_count }}</td>
+      <td><a href="/admin/profiles/{{ r.id }}/edit">Edit</a></td>
+    </tr>
+    {% endfor %}
+  </tbody>
+</table>
+{% endif %}
+{% endblock %}

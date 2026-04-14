@@ -1,0 +1,101 @@
+{% extends "public_base.html" %}
+{% block title %}About & glossary{% endblock %}
+{% block content %}
+<div class="page-card">
+  <h1>About this site</h1>
+  <p class="lead">Hey, I’m <strong>Manish Raghavendra</strong>. I made this for fun, but also for that very specific “just in case everything goes sideways” scenario. You know… zombie apocalypse, Fallout-style wasteland, random power grid collapse, or the day you realize supermarkets aren’t as immortal as they look.</p>
+  <p class="lead" style="margin-top:0.75rem">This database stores plants and growing profiles, basically survival cheat sheets for growing food in weird situations. Think: “potatoes during a drought,” “tomatoes in containers on a balcony,” or “whatever still grows when life gets… interesting.”</p>
+  <p class="lead" style="margin-top:0.75rem">The glossary below explains all the fancy labels and dropdown terms in plain human language, so you don’t need a botany degree (or a functioning civilization) to understand it.</p>
+  <p class="muted" style="margin-top:0.75rem"><strong>Tiny serious note:</strong> this is definitely not a “how to survive radiation” manual. If things ever get real, listen to actual experts and not a guy mixing plant data with apocalypse planning.</p>
+</div>
+
+<div class="page-card about-section">
+  <h2>Life cycle (annual / perennial / biennial)</h2>
+  <ul>
+    <li><strong>Annual:</strong> Completes its life in one growing season and usually dies with frost or harvest. You replant from seed (or starts) next year. Example: many melons, tomatoes, beans.</li>
+    <li><strong>Perennial:</strong> Lives multiple years; the same plant (or its roots/crown) comes back. Example: many fruit trees, asparagus, rhubarb.</li>
+    <li><strong>Biennial:</strong> Two-year rhythm: often leaves/root in year one, then flowers and sets seed in year two, then the plant is done. Example: some onions, kale can behave like a biennial if left in the ground.</li>
+  </ul>
+</div>
+
+<div class="page-card about-section">
+  <h2>Environment (the “scenario” dropdown)</h2>
+  <p>This answers: <em>Under what kind of conditions is this advice meant?</em> Examples in the database might include:</p>
+  <ul>
+    <li><strong>Home garden:</strong> Normal backyard conditions with reasonable care.</li>
+    <li><strong>Drought / water rationing:</strong> You must save water; heat stress is more likely.</li>
+    <li><strong>Container-only:</strong> You are only growing in pots or grow bags (not in the ground).</li>
+    <li><strong>Urban soil:</strong> You might have unknown contamination; testing and raised beds are common themes.</li>
+    <li><strong>Speculative</strong> scenarios: marked clearly on the site as “what if” or modeling style rows, not a guarantee of what will work in a disaster or radiation event.</li>
+  </ul>
+</div>
+
+<div class="page-card about-section">
+  <h2>Growing medium</h2>
+  <p><em>What are you growing in?</em> For example: ordinary garden soil, a raised bed filled with soil/compost, a container, hydroponics (nutrient water, no soil), or similar. The same plant can have different profiles for different media.</p>
+</div>
+
+<div class="page-card about-section">
+  <h2>Difficulty (beginner / intermediate / advanced)</h2>
+  <ul>
+    <li><strong>Beginner:</strong> Forgiving crop or setup; fewer tools and less precision needed.</li>
+    <li><strong>Intermediate:</strong> Needs more attention: timing, watering, pests, or equipment.</li>
+    <li><strong>Advanced:</strong> Demanding: tight climate control, sterile technique (e.g. some mushrooms), or high risk of failure.</li>
+  </ul>
+</div>
+
+<div class="page-card about-section">
+  <h2>Confidence (peer_reviewed / field_practice / speculative)</h2>
+  <p>This is <strong>how strong the evidence is behind that profile</strong>, not how hard the plant is to grow.</p>
+  <ul>
+    <li><strong>peer_reviewed:</strong> Tied to formal research (journal articles, rigorous studies). In this app you should still list <strong>sources</strong> so readers can check.</li>
+    <li><strong>field_practice:</strong> Standard advice from agricultural extension, experienced growers, or reputable manuals, even if every line was not published as a paper. This is “what professionals and serious gardeners usually do.”</li>
+    <li><strong>speculative:</strong> Hypothetical, modeling, or disaster-prep style notes. Treat as <strong>ideas to research further</strong>, not proven instructions. Profiles marked speculative may still list sources for background reading.</li>
+  </ul>
+  <p><strong>Why the CMS forces sources for non-speculative profiles:</strong> If you say the advice is <code>peer_reviewed</code> or <code>field_practice</code>, you must pick at least one <strong>source</strong> so the entry is not just anonymous text on the internet.</p>
+</div>
+
+<div class="page-card about-section">
+  <h2>Source types (extension / peer_review / grey_literature / community)</h2>
+  <p>When you add a <strong>Source</strong> in the CMS, you classify it:</p>
+  <ul>
+    <li><strong>extension:</strong> University extension, government agriculture pages, and similar public education material (often .gov / .edu).</li>
+    <li><strong>peer_review:</strong> Academic journal articles or other work that went through scientific peer review.</li>
+    <li><strong>grey_literature:</strong> Credible but not a journal paper: agency reports, technical bulletins, NGO PDFs, conference proceedings.</li>
+    <li><strong>community:</strong> Forums, blogs, social posts. Useful for ideas, but <strong>weakest</strong> as evidence. Use sparingly for serious growing claims.</li>
+  </ul>
+</div>
+
+<div class="page-card about-section">
+  <h2>Summary</h2>
+  <p>Optional short paragraph: what this profile covers in one glance (“Deep containers + mulch for drought potatoes,” etc.).</p>
+</div>
+
+<div class="page-card about-section">
+  <h2>Climate / region (worldwide)</h2>
+  <p>Each growing profile can include a free-text field for <strong>anywhere on Earth</strong>: country or state, wet/dry season (e.g. India kharif/rabi), monsoon timing, elevation, a <strong>Köppen</strong> code (e.g. Aw, Cwa), a <strong>RHS</strong> hardiness rating if you use UK references, “highland tropics,” and so on. No single global standard fits everyone, so this box is intentionally flexible.</p>
+</div>
+
+<div class="page-card about-section">
+  <h2>USDA hardiness zone min / max (optional, US-focused)</h2>
+  <p>These two number fields are <strong>optional</strong> and refer only to the <strong>USDA plant hardiness map</strong> (mainly the <strong>United States</strong>, sometimes cited in Canada). They describe <strong>typical coldest winter temperature</strong>. Lower numbers mean colder winters (e.g. zone 4 is colder than zone 9).</p>
+  <p>If you garden outside that system (for example much of <strong>India</strong>, Africa, or Europe using other references), you can <strong>leave USDA min/max blank</strong> and put everything important in <strong>Climate / region</strong> plus summary and requirements.</p>
+  <p>US map and legend: <a href="https://planthardiness.ars.usda.gov/" rel="noopener noreferrer">USDA Plant Hardiness Zone Map</a>.</p>
+</div>
+
+<div class="page-card about-section">
+  <h2>Sources (checkboxes on a profile)</h2>
+  <p>These link the profile to rows in <strong>Sources</strong> (title + URL, etc.).</p>
+  <ul>
+    <li>If <strong>confidence</strong> is <code>speculative</code>, sources are optional.</li>
+    <li>If confidence is <code>peer_reviewed</code> or <code>field_practice</code>, you <strong>must</strong> tick at least one source, or the form will not save. That keeps “serious” profiles honest.</li>
+  </ul>
+</div>
+
+<div class="page-card about-section">
+  <h2>Toxicity / safety notes</h2>
+  <p>Free text on the <strong>plant</strong> (not the profile): parts that are poisonous, green potatoes, oxalates in greens, etc. This is a reminder field, <strong>not a complete safety database</strong>. When in doubt, check extension and medical poison control resources.</p>
+</div>
+
+<p class="muted"><a href="/">← Back to plants</a></p>
+{% endblock %}

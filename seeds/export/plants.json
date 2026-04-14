@@ -1,0 +1,77 @@
+[
+  {
+    "scientific_name": "Amaranthus cruentus",
+    "common_names": [
+      "grain amaranth",
+      "amaranth"
+    ],
+    "plant_type_name": "Staple grain",
+    "life_cycle": "annual",
+    "native_regions": "Americas",
+    "edible_parts": [
+      "seed",
+      "leaf"
+    ],
+    "toxicity_notes": "Some ornamental amaranths are not for food; verify species/cultivar.",
+    "image_url": "https://www.gardenia.net/wp-content/uploads/2023/05/Amaranthus-cruentus-Velvet-Curtains-512x533.webp"
+  },
+  {
+    "scientific_name": "Brassica oleracea (acephala group)",
+    "common_names": [
+      "kale"
+    ],
+    "plant_type_name": "Leafy vegetable",
+    "life_cycle": "biennial",
+    "native_regions": "Europe",
+    "edible_parts": [
+      "leaf"
+    ],
+    "toxicity_notes": "High oxalate; moderate goitrogens when raw in very large amounts.",
+    "image_url": "https://www.brookgreen.org/sites/default/files/styles/fp_landscape_1920x1440/public/Brassica%20oleracea%20%27Champion%27%20%28Acephala%20Group%29%20foliage.jpg.webp?itok=LwlrB2Od"
+  },
+  {
+    "scientific_name": "Solanum tuberosum",
+    "common_names": [
+      "potato",
+      "Irish potato"
+    ],
+    "plant_type_name": "Root and tuber",
+    "life_cycle": "annual",
+    "native_regions": "Andes; worldwide cultivation",
+    "edible_parts": [
+      "tuber"
+    ],
+    "toxicity_notes": "Green tubers and sprouts contain elevated solanine; discard or peel per extension advice.",
+    "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/11/Valentiny_Red_Pontiac.jpg/320px-Valentiny_Red_Pontiac.jpg"
+  },
+  {
+    "scientific_name": "Vigna unguiculata",
+    "common_names": [
+      "cowpea",
+      "black-eyed pea"
+    ],
+    "plant_type_name": "Legume",
+    "life_cycle": "annual",
+    "native_regions": "Africa; widely tropical/subtropical",
+    "edible_parts": [
+      "seed",
+      "pod",
+      "leaf"
+    ],
+    "toxicity_notes": null,
+    "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d8/Vigna_unguiculata_BL.jpeg/320px-Vigna_unguiculata_BL.jpeg"
+  },
+  {
+    "scientific_name": "sdfasdfasdf",
+    "common_names": [
+      "asdfasdf"
+    ],
+    "plant_type_name": "Fruit (woody or vine)",
+    "life_cycle": "annual",
+    "native_regions": "zxcvasdfawsd",
+    "edible_parts": [
+      "cvzxcv"
+    ],
+    "toxicity_notes": "fasdhgadsfvazsdagsfhaerdtfbaerfvvsedrfhsedfhgsdfg"
+  }
+]

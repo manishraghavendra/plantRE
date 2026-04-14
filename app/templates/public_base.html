@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>{% block title %}{{ title }}{% endblock %} · PlantRE</title>
+  <link rel="stylesheet" href="/static/app.css" />
+</head>
+<body class="public">
+  <header class="site-header">
+    <a class="brand" href="/">PlantRE</a>
+    <form class="search-form" action="/search" method="get" role="search" aria-label="Site search">
+      <input type="search" name="q" value="{% if query is defined %}{{ query|e }}{% endif %}" placeholder="Search plants, steps, hazards, sources…" autocomplete="off" />
+      <button type="submit">Search</button>
+    </form>
+    <nav class="site-nav">
+      <a href="/about">About</a>
+      <a href="/admin/">CMS</a>
+      <a href="/docs">API</a>
+      <a href="/export/profiles.csv">CSV</a>
+    </nav>
+  </header>
+  <main class="container">
+    {% block content %}{% endblock %}
+  </main>
+</body>
+</html>

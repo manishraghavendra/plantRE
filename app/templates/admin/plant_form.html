@@ -1,0 +1,45 @@
+{% extends "admin/base.html" %}
+{% block content %}
+<h1>{{ title }}</h1>
+<form method="post" enctype="multipart/form-data" action="{{ '/admin/plants/new' if not plant else '/admin/plants/' ~ plant.id ~ '/edit' }}">
+  <label>Scientific name <input type="text" name="scientific_name" required value="{{ plant.scientific_name if plant else '' }}" /></label>
+  <label>Plant type
+    <select name="plant_type_id" required>
+      {% for t in plant_types %}
+      <option value="{{ t.id }}" {% if plant and plant.plant_type_id == t.id %}selected{% endif %}>{{ t.name }}</option>
+      {% endfor %}
+    </select>
+  </label>
+  <label>Life cycle
+    <select name="life_cycle" required>
+      {% for lc in life_cycles %}
+      <option value="{{ lc }}" {% if plant and plant.life_cycle == lc %}selected{% endif %}>{{ lc }}</option>
+      {% endfor %}
+    </select>
+  </label>
+  <label>Common names <span class="muted">(comma-separated)</span>
+    <input type="text" name="common_names" value="{{ common_names_csv }}" placeholder="potato, Irish potato" />
+  </label>
+  <label>Edible parts <span class="muted">(comma-separated)</span>
+    <input type="text" name="edible_parts" value="{{ edible_parts_csv }}" placeholder="tuber, leaf" />
+  </label>
+  <label>Native regions <textarea name="native_regions">{{ plant.native_regions if plant else '' }}</textarea></label>
+  <label>Toxicity / safety notes <textarea name="toxicity_notes">{{ plant.toxicity_notes if plant else '' }}</textarea></label>
+
+  <h2 style="font-size:1rem;margin-top:1.25rem">Photo</h2>
+  <p class="muted">Paste an image URL (Wikipedia, your own host, etc.) or upload a file (JPG, PNG, GIF, WebP, max ~4&nbsp;MB). Upload wins over the URL if both are set.</p>
+  {% if plant and plant.image_url %}
+  <p><img src="{{ plant.image_url }}" alt="" style="max-width:12rem;border-radius:10px;border:1px solid #dce2e8" loading="lazy" /></p>
+  {% endif %}
+  <label>Image URL <input type="url" name="image_url" value="{{ plant.image_url if plant and plant.image_url else '' }}" placeholder="https://…" /></label>
+  <label>Image file <input type="file" name="image_file" accept="image/jpeg,image/png,image/gif,image/webp,.jpg,.jpeg,.png,.gif,.webp" /></label>
+  {% if plant %}
+  <label style="font-weight:500"><input type="checkbox" name="clear_image" value="on" /> Remove image (clears URL and any uploaded file for this plant)</label>
+  {% endif %}
+
+  <div class="actions">
+    <button type="submit" class="primary">Save</button>
+    <a class="btn" href="/admin/plants">Cancel</a>
+  </div>
+</form>
+{% endblock %}

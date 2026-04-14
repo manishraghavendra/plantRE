@@ -1,0 +1,26 @@
+[
+  {
+    "name": "Aquaponics",
+    "description": "Fish-integrated recirculating system."
+  },
+  {
+    "name": "Container",
+    "description": "Pots, grow bags, buckets."
+  },
+  {
+    "name": "Hydroponics",
+    "description": "Soilless nutrient solution."
+  },
+  {
+    "name": "In-ground soil",
+    "description": "Native or amended garden soil."
+  },
+  {
+    "name": "Raised bed",
+    "description": "Contained soil above grade."
+  },
+  {
+    "name": "Unspecified",
+    "description": "Medium not specified; use when guidance applies generally."
+  }
+]

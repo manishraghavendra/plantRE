@@ -1,0 +1,148 @@
+{% extends "admin/base.html" %}
+{% block content %}
+<h1>Edit growing profile</h1>
+<p class="muted">
+  Plant: <strong>{{ plant.scientific_name }}</strong> ·
+  <a href="/admin/plants/{{ plant.id }}/profiles">All profiles</a> ·
+  <a href="/plant/{{ plant.id }}">Public view</a>
+</p>
+
+<form method="post" action="/admin/profiles/{{ profile.id }}/edit">
+  <h2 style="font-size:1.1rem;margin-top:1.25rem">Profile settings</h2>
+  <label>Environment
+    <select name="environment_condition_id" required>
+      {% for e in envs %}
+      <option value="{{ e.id }}" {% if profile.environment_condition_id == e.id %}selected{% endif %}>{{ e.name }}{% if e.is_speculative %} (speculative){% endif %}</option>
+      {% endfor %}
+    </select>
+  </label>
+  <label>Growing medium
+    <select name="medium_id" required>
+      {% for m in meds %}
+      <option value="{{ m.id }}" {% if profile.medium_id == m.id %}selected{% endif %}>{{ m.name }}</option>
+      {% endfor %}
+    </select>
+  </label>
+  <label>Difficulty
+    <select name="difficulty" required>
+      {% for d in difficulties %}
+      <option value="{{ d }}" {% if profile.difficulty == d %}selected{% endif %}>{{ d }}</option>
+      {% endfor %}
+    </select>
+  </label>
+  <label>Confidence
+    <select name="confidence_level" required>
+      {% for c in confidence_levels %}
+      <option value="{{ c }}" {% if profile.confidence_level == c %}selected{% endif %}>{{ c }}</option>
+      {% endfor %}
+    </select>
+  </label>
+  <p class="muted">Non-speculative profiles must keep at least one source checked.</p>
+  <label>Summary <textarea name="summary">{{ profile.summary or "" }}</textarea></label>
+  <label>Climate / region (worldwide) <textarea name="climate_context" placeholder="Country, season, Köppen, RHS rating, elevation…">{{ profile.climate_context or "" }}</textarea></label>
+  <p class="muted">Use this for non-US labels. USDA zones below stay optional.</p>
+  <label>USDA hardiness zone min <input type="text" name="hardiness_zone_min" value="{{ profile.hardiness_zone_min if profile.hardiness_zone_min is not none else '' }}" /></label>
+  <label>USDA hardiness zone max <input type="text" name="hardiness_zone_max" value="{{ profile.hardiness_zone_max if profile.hardiness_zone_max is not none else '' }}" /></label>
+  <fieldset>
+    <legend>Sources (profile citations)</legend>
+    <div class="check-grid">
+      {% for s in sources %}
+      <label><input type="checkbox" name="source_id" value="{{ s.id }}" {% if s.id in selected_sources %}checked{% endif %} /> {{ s.title }}</label>
+      {% endfor %}
+    </div>
+  </fieldset>
+  <div class="actions">
+    <button type="submit" class="primary">Save profile</button>
+  </div>
+</form>
+
+<form method="post" action="/admin/profiles/{{ profile.id }}/delete" style="margin-top:1.5rem" onsubmit="return confirm('Delete this entire profile (steps, requirements, citations)?');">
+  <button type="submit" class="danger">Delete profile</button>
+</form>
+
+<h2 style="font-size:1.1rem;margin-top:2rem">Steps</h2>
+<p><a class="btn primary" href="/admin/profiles/{{ profile.id }}/steps/new">Add step</a></p>
+{% if profile.steps %}
+<table>
+  <thead><tr><th>#</th><th>Title</th><th></th></tr></thead>
+  <tbody>
+    {% for s in profile.steps|sort(attribute='step_order') %}
+    <tr>
+      <td>{{ s.step_order }}</td>
+      <td>{{ s.title }}</td>
+      <td>
+        <a href="/admin/steps/{{ s.id }}/edit">Edit</a>
+        <form style="display:inline" method="post" action="/admin/steps/{{ s.id }}/delete" onsubmit="return confirm('Delete this step?');">
+          <button type="submit" class="danger">Delete</button>
+        </form>
+      </td>
+    </tr>
+    {% endfor %}
+  </tbody>
+</table>
+{% else %}
+<p class="muted">No steps yet.</p>
+{% endif %}
+
+<h2 style="font-size:1.1rem;margin-top:2rem">Requirements</h2>
+<p><a class="btn primary" href="/admin/profiles/{{ profile.id }}/requirements/new">Add requirement</a></p>
+{% if profile.requirements %}
+<table>
+  <thead><tr><th>Category</th><th>Values</th><th></th></tr></thead>
+  <tbody>
+    {% for r in profile.requirements %}
+    <tr>
+      <td>{{ r.category }}</td>
+      <td>{{ r.value_min }} – {{ r.value_max }} {{ r.unit or "" }} {% if r.notes %}<br><span class="muted">{{ r.notes }}</span>{% endif %}</td>
+      <td>
+        <a href="/admin/requirements/{{ r.id }}/edit">Edit</a>
+        <form style="display:inline" method="post" action="/admin/requirements/{{ r.id }}/delete" onsubmit="return confirm('Delete?');">
+          <button type="submit" class="danger">Delete</button>
+        </form>
+      </td>
+    </tr>
+    {% endfor %}
+  </tbody>
+</table>
+{% else %}
+<p class="muted">No requirements yet.</p>
+{% endif %}
+
+<h2 style="font-size:1.1rem;margin-top:2rem">Hazards linked to this profile</h2>
+{% if profile_hazards %}
+<table>
+  <thead><tr><th>Hazard</th><th>Kind</th><th>Mitigation</th><th></th></tr></thead>
+  <tbody>
+    {% for row in profile_hazards %}
+    <tr>
+      <td>{{ row.hazard_name }}</td>
+      <td>{% if row.hazard_kind == 'growing_issue' %}Growing issue{% else %}Food safety{% endif %}</td>
+      <td>{{ row.mitigation_detail or "" }} {% if row.evidence_notes %}<br><span class="muted">{{ row.evidence_notes }}</span>{% endif %}</td>
+      <td>
+        <form method="post" action="/admin/profiles/{{ profile.id }}/hazards/{{ row.hazard_id }}/delete" onsubmit="return confirm('Remove this hazard link?');">
+          <button type="submit" class="danger">Remove</button>
+        </form>
+      </td>
+    </tr>
+    {% endfor %}
+  </tbody>
+</table>
+{% else %}
+<p class="muted">No hazards linked.</p>
+{% endif %}
+
+<h3 style="font-size:1rem;margin-top:1rem">Link a hazard</h3>
+<form method="post" action="/admin/profiles/{{ profile.id }}/hazards/add">
+  <label>Hazard
+    <select name="hazard_id" required>
+      {% for h in hazards %}
+      <option value="{{ h.id }}">{{ h.name }} ({% if h.kind == 'growing_issue' %}growing issue{% else %}food safety{% endif %})</option>
+      {% endfor %}
+    </select>
+  </label>
+  <label>Mitigation detail <textarea name="mitigation_detail"></textarea></label>
+  <label>Evidence notes <textarea name="evidence_notes"></textarea></label>
+  <div class="actions"><button type="submit" class="primary">Add / update link</button></div>
+</form>
+<p class="muted">Adding the same hazard again replaces mitigation text (upsert).</p>
+{% endblock %}

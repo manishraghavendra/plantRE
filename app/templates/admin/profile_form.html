@@ -1,0 +1,49 @@
+{% extends "admin/base.html" %}
+{% block content %}
+<h1>New growing profile</h1>
+<p class="muted">Plant: <strong>{{ plant.scientific_name }}</strong> · <a href="/admin/plants/{{ plant.id }}/profiles">Cancel</a></p>
+<form method="post" action="/admin/plants/{{ plant.id }}/profiles/new">
+  <label>Environment
+    <select name="environment_condition_id" required>
+      {% for e in envs %}
+      <option value="{{ e.id }}">{{ e.name }}{% if e.is_speculative %} (speculative){% endif %}</option>
+      {% endfor %}
+    </select>
+  </label>
+  <label>Growing medium
+    <select name="medium_id" required>
+      {% for m in meds %}
+      <option value="{{ m.id }}">{{ m.name }}</option>
+      {% endfor %}
+    </select>
+  </label>
+  <label>Difficulty
+    <select name="difficulty" required>
+      {% for d in difficulties %}<option value="{{ d }}">{{ d }}</option>{% endfor %}
+    </select>
+  </label>
+  <label>Confidence
+    <select name="confidence_level" required id="confidence">
+      {% for c in confidence_levels %}<option value="{{ c }}">{{ c }}</option>{% endfor %}
+    </select>
+  </label>
+  <p class="muted">If confidence is not <code>speculative</code>, select at least one source below.</p>
+  <label>Summary <textarea name="summary"></textarea></label>
+  <label>Climate / region (worldwide) <textarea name="climate_context" placeholder="e.g. India NW plains rabi; Köppen Cwa; UK RHS H4; elevation 900 m"></textarea></label>
+  <p class="muted">Free text for <strong>any</strong> country or system. USDA min/max below are optional US-style numbers only.</p>
+  <label>USDA hardiness zone min <input type="text" name="hardiness_zone_min" placeholder="optional" /></label>
+  <label>USDA hardiness zone max <input type="text" name="hardiness_zone_max" placeholder="optional" /></label>
+  <fieldset>
+    <legend>Sources (profile citations)</legend>
+    <div class="check-grid">
+      {% for s in sources %}
+      <label><input type="checkbox" name="source_id" value="{{ s.id }}" /> {{ s.title }}</label>
+      {% endfor %}
+    </div>
+    {% if not sources %}<p class="muted">No sources yet. <a href="/admin/sources/new">Add a source</a> first.</p>{% endif %}
+  </fieldset>
+  <div class="actions">
+    <button type="submit" class="primary">Create profile</button>
+  </div>
+</form>
+{% endblock %}

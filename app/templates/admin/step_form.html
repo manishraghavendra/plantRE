@@ -1,0 +1,16 @@
+{% extends "admin/base.html" %}
+{% block content %}
+<h1>{{ title }}</h1>
+<p class="muted"><a href="/admin/profiles/{{ profile.id }}/edit">← Back to profile</a></p>
+<form method="post" action="{{ '/admin/profiles/' ~ profile.id ~ '/steps/new' if not step else '/admin/steps/' ~ step.id ~ '/edit' }}">
+  <label>Step order <input type="number" name="step_order" required value="{{ default_order }}" /></label>
+  <label>Title <input type="text" name="title" required value="{{ step.title if step else '' }}" /></label>
+  <label>Body <textarea name="body" required>{{ step.body if step else '' }}</textarea></label>
+  <label>Equipment <input type="text" name="equipment" value="{{ step.equipment if step else '' }}" /></label>
+  <label>Duration (days) <input type="text" name="duration_days" value="{{ step.duration_days if step and step.duration_days is not none else '' }}" /></label>
+  <div class="actions">
+    <button type="submit" class="primary">Save</button>
+    <a class="btn" href="/admin/profiles/{{ profile.id }}/edit">Cancel</a>
+  </div>
+</form>
+{% endblock %}

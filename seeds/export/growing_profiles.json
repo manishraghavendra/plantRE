@@ -1,0 +1,210 @@
+[
+  {
+    "plant_scientific_name": "Solanum tuberosum",
+    "environment_code": "drought",
+    "medium_name": "Container",
+    "hardiness_zone_min": 3,
+    "hardiness_zone_max": 10,
+    "summary": "Use deep containers and mulch to reduce evaporation; favor early varieties; prioritize soil moisture monitoring.",
+    "difficulty": "intermediate",
+    "confidence_level": "field_practice",
+    "last_reviewed_at": null,
+    "steps": [
+      {
+        "step_order": 1,
+        "title": "Container depth",
+        "body": "Choose at least 15–20 gallon equivalent depth for maincrop types; deeper is better for drought buffering.",
+        "duration_days": null,
+        "equipment": null
+      },
+      {
+        "step_order": 2,
+        "title": "Mulch",
+        "body": "Apply organic mulch after plants emerge to cut surface evaporation.",
+        "duration_days": null,
+        "equipment": "straw or leaf mulch"
+      }
+    ],
+    "requirements": [
+      {
+        "category": "light",
+        "value_min": 6.0,
+        "value_max": 10.0,
+        "unit": "hours_full_sun",
+        "notes": "Full sun where possible."
+      },
+      {
+        "category": "water",
+        "value_min": null,
+        "value_max": null,
+        "unit": "deficit_irrigation_notes",
+        "notes": "Irrigate deeply but less frequently once established; avoid constant shallow wetting."
+      }
+    ],
+    "hazard_links": [
+      {
+        "hazard_name": "Fungal diseases",
+        "mitigation_detail": "Improve airflow in dense foliage; avoid wetting leaves late in the day; remove infected lower leaves per local potato disease IPM.",
+        "evidence_notes": null
+      },
+      {
+        "hazard_name": "Green tubers (solanine)",
+        "mitigation_detail": "Hill soil to exclude light from tubers; store harvested tubers in darkness.",
+        "evidence_notes": "Align with local extension potato storage guidance."
+      },
+      {
+        "hazard_name": "Root rot / overwatering",
+        "mitigation_detail": "Use free-draining container mix; empty saucers; water deeply but only when soil dries appropriately for the growth stage.",
+        "evidence_notes": null
+      }
+    ],
+    "citations": [
+      {
+        "source_title": "Extension drought gardening principles (example)",
+        "target": "profile",
+        "quote": null,
+        "page": null
+      }
+    ]
+  },
+  {
+    "plant_scientific_name": "Amaranthus cruentus",
+    "environment_code": "drought",
+    "medium_name": "In-ground soil",
+    "hardiness_zone_min": null,
+    "hardiness_zone_max": null,
+    "summary": "Amaranth tolerates heat and moderate water stress once established; still needs establishment water.",
+    "difficulty": "beginner",
+    "confidence_level": "field_practice",
+    "last_reviewed_at": null,
+    "steps": [
+      {
+        "step_order": 1,
+        "title": "Establishment",
+        "body": "Water seedlings regularly for 2–3 weeks; reduce frequency as roots deepen.",
+        "duration_days": 21,
+        "equipment": null
+      }
+    ],
+    "requirements": [
+      {
+        "category": "temp",
+        "value_min": 15.0,
+        "value_max": 40.0,
+        "unit": "celsius_growth_range_approx",
+        "notes": "Heat-tolerant relative to cool-season greens."
+      }
+    ],
+    "hazard_links": [
+      {
+        "hazard_name": "Pests",
+        "mitigation_detail": "Row cover during peak flea-beetle pressure; rotate with non-host crops; hand-pick or use labeled controls per extension.",
+        "evidence_notes": null
+      }
+    ],
+    "citations": [
+      {
+        "source_title": "Extension drought gardening principles (example)",
+        "target": "profile",
+        "quote": null,
+        "page": null
+      }
+    ],
+    "climate_context": "Example (India / global): tropical to subtropical; often grown kharif with monsoon rain. USDA zones optional; use local ag advisories for your state."
+  },
+  {
+    "plant_scientific_name": "Brassica oleracea (acephala group)",
+    "environment_code": "urban_contaminated_soil",
+    "medium_name": "Raised bed",
+    "hardiness_zone_min": null,
+    "hardiness_zone_max": null,
+    "summary": "Grow in imported clean soil in raised beds to bypass unknown native urban soil.",
+    "difficulty": "beginner",
+    "confidence_level": "field_practice",
+    "last_reviewed_at": null,
+    "steps": [
+      {
+        "step_order": 1,
+        "title": "Bed fill",
+        "body": "Use tested compost and topsoil from reputable suppliers; capillary break if needed.",
+        "duration_days": null,
+        "equipment": "landscape fabric optional"
+      }
+    ],
+    "requirements": [
+      {
+        "category": "soil_ph",
+        "value_min": 6.0,
+        "value_max": 7.0,
+        "unit": "pH",
+        "notes": "Typical brassica range."
+      }
+    ],
+    "hazard_links": [
+      {
+        "hazard_name": "Heavy metals in produce",
+        "mitigation_detail": "Raised bed with clean fill reduces uptake pathway from legacy site soil.",
+        "evidence_notes": "Still test irrigation water if suspect."
+      }
+    ],
+    "citations": [
+      {
+        "source_title": "Urban gardening and soil contaminants (example)",
+        "target": "profile",
+        "quote": null,
+        "page": null
+      }
+    ]
+  },
+  {
+    "plant_scientific_name": "Vigna unguiculata",
+    "environment_code": "high_radiation_background_speculative",
+    "medium_name": "Unspecified",
+    "hardiness_zone_min": null,
+    "hardiness_zone_max": null,
+    "summary": "SPECULATIVE: legumes are studied for stress physiology; this row is for schema demo only—not prescriptive for radiation disasters.",
+    "difficulty": "advanced",
+    "confidence_level": "speculative",
+    "last_reviewed_at": null,
+    "steps": [
+      {
+        "step_order": 1,
+        "title": "Disclaimer",
+        "body": "Do not use this text for safety decisions; consult radiological agriculture experts and official guidance.",
+        "duration_days": null,
+        "equipment": null
+      }
+    ],
+    "requirements": [],
+    "hazard_links": [],
+    "citations": [
+      {
+        "source_title": "Plant radiobiology review (example)",
+        "target": "profile",
+        "quote": null,
+        "page": null
+      }
+    ]
+  },
+  {
+    "plant_scientific_name": "sdfasdfasdf",
+    "environment_code": "container_only",
+    "medium_name": "Aquaponics",
+    "hardiness_zone_min": null,
+    "hardiness_zone_max": null,
+    "summary": null,
+    "difficulty": "beginner",
+    "confidence_level": "speculative",
+    "last_reviewed_at": null,
+    "steps": [],
+    "requirements": [],
+    "hazard_links": [
+      {
+        "hazard_name": "Foodborne pathogens (sprouts and greens)",
+        "mitigation_detail": null,
+        "evidence_notes": null
+      }
+    ],
+    "citations": []
+  }
+]

@@ -1,0 +1,44 @@
+[
+  {
+    "name": "Foodborne pathogens (sprouts and greens)",
+    "kind": "food_safety",
+    "description": "High humidity crops can harbor pathogens.",
+    "mitigation_summary": "Use potable water; follow seed sprouting hygiene guidance from health agencies."
+  },
+  {
+    "name": "Fungal diseases",
+    "kind": "growing_issue",
+    "description": "Leaf, stem, fruit, or tuber diseases caused by plant-pathogenic fungi (e.g. blights, mildews, rots) favored by humidity, poor airflow, or infected debris.",
+    "mitigation_summary": "Use resistant varieties where available; spacing and airflow; avoid overhead wetting late in day; sanitation; rotate crops; scout and remove infected tissue per extension IPM."
+  },
+  {
+    "name": "Green tubers (solanine)",
+    "kind": "food_safety",
+    "description": "Potatoes exposed to light increase glycoalkaloids.",
+    "mitigation_summary": "Hill soil; store dark; discard green or sprouted portions per extension guidance."
+  },
+  {
+    "name": "Heavy metals in produce",
+    "kind": "food_safety",
+    "description": "Uptake from contaminated soil or water.",
+    "mitigation_summary": "Test soil; use raised beds and clean media; wash produce; follow local health guidance."
+  },
+  {
+    "name": "Mycotoxins in stored staples",
+    "kind": "food_safety",
+    "description": "Fungal toxins in improperly dried or stored grain/tuber.",
+    "mitigation_summary": "Dry to safe moisture; cool dry airtight storage; inspect and discard suspect lots."
+  },
+  {
+    "name": "Pests",
+    "kind": "growing_issue",
+    "description": "Insects, mites, nematodes, or other animals that damage plants or spread disease.",
+    "mitigation_summary": "Monitor regularly; physical barriers and row cover; encourage beneficials; targeted controls per local extension integrated pest management."
+  },
+  {
+    "name": "Root rot / overwatering",
+    "kind": "growing_issue",
+    "description": "Oxygen-starved roots and opportunistic rot organisms from saturated media or poor drainage.",
+    "mitigation_summary": "Well-drained mix; containers with drainage; water when appropriate for species and season; avoid standing water in saucers."
+  }
+]

@@ -1,0 +1,81 @@
+{% extends "public_base.html" %}
+{% block title %}{{ plant.scientific_name }}{% endblock %}
+{% block content %}
+<div class="toolbar page-card" style="margin-bottom:1rem;padding:0.85rem 1.1rem">
+  <a href="/">← All plants</a>
+  <a href="/admin/plants/{{ plant.id }}/profiles">Edit in CMS</a>
+</div>
+
+<div class="page-card plant-hero">
+  {% if plant.image_url %}
+  <img src="{{ plant.image_url }}" alt="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" />
+  {% endif %}
+  <div class="plant-hero-body">
+    <h1 style="margin-top:0">{{ plant.scientific_name }}</h1>
+    {% if plant.common_names %}
+    <p class="lead" style="margin-top:0.25rem">Also known as: {{ plant.common_names | join(", ") }}</p>
+    {% endif %}
+    <p>
+      <span class="badge">Life cycle: {{ plant.life_cycle }}</span>
+      {% if plant.native_regions %}<span class="badge">{{ plant.native_regions }}</span>{% endif %}
+    </p>
+    {% if plant.edible_parts %}
+    <p><strong>Edible parts:</strong> {{ plant.edible_parts | join(", ") }}</p>
+    {% endif %}
+    {% if plant.toxicity_notes %}
+    <p><strong>Toxicity / safety:</strong> {{ plant.toxicity_notes }}</p>
+    {% endif %}
+  </div>
+</div>
+
+{% for pr in plant.growing_profiles %}
+<div class="profile-block" id="profile-{{ pr.id }}">
+  <h2>{{ pr.environment.name }}
+    {% if pr.environment.is_speculative %}<span class="badge spec">speculative</span>{% endif %}
+  </h2>
+  <p class="muted"><strong>Medium:</strong> {{ pr.medium }} · <strong>Difficulty:</strong> {{ pr.difficulty }}
+     · <strong>Confidence:</strong> {{ pr.confidence_level }}</p>
+  {% if pr.climate_context %}
+  <p><strong>Climate / region:</strong> {{ pr.climate_context }}</p>
+  {% endif %}
+  {% if pr.hardiness_zone_min is not none or pr.hardiness_zone_max is not none %}
+  <p class="muted"><strong>USDA zones (optional):</strong> {{ pr.hardiness_zone_min if pr.hardiness_zone_min is not none else "?" }} to {{ pr.hardiness_zone_max if pr.hardiness_zone_max is not none else "?" }}</p>
+  {% endif %}
+  {% if pr.summary %}<p>{{ pr.summary }}</p>{% endif %}
+  {% if pr.steps %}
+  <ol class="steps">
+    {% for s in pr.steps %}
+    <li><strong>{{ s.title }}</strong> — {{ s.body }}{% if s.equipment %} <em>({{ s.equipment }})</em>{% endif %}</li>
+    {% endfor %}
+  </ol>
+  {% endif %}
+  {% if pr.requirements %}
+  <p><strong>Requirements</strong></p>
+  <ul>
+    {% for r in pr.requirements %}
+    <li>{{ r.category }}{% if r.unit %}: {{ r.value_min }}–{{ r.value_max }} {{ r.unit }}{% endif %}{% if r.notes %} — {{ r.notes }}{% endif %}</li>
+    {% endfor %}
+  </ul>
+  {% endif %}
+  {% if pr.hazards %}
+  <p><strong>Food safety &amp; growing issues</strong></p>
+  <ul class="hazard-list">
+    {% for h in pr.hazards %}
+    <li>
+      {% if h.kind == 'growing_issue' %}<span class="badge">Growing</span>{% else %}<span class="badge">Food safety</span>{% endif %}
+      <strong>{{ h.name }}</strong>{% if h.mitigation_detail %} — {{ h.mitigation_detail }}{% endif %}
+      {% if h.evidence_notes %}<br><span class="muted">{{ h.evidence_notes }}</span>{% endif %}
+    </li>
+    {% endfor %}
+  </ul>
+  {% endif %}
+  {% if pr.citations %}
+  <p class="citations"><strong>Sources</strong> —
+    {% for c in pr.citations %}
+      {% if c.url %}<a href="{{ c.url }}">{{ c.source_title }}</a>{% else %}{{ c.source_title }}{% endif %} ({{ c.source_type }}){% if not loop.last %}; {% endif %}
+    {% endfor %}
+  </p>
+  {% endif %}
+</div>
+{% endfor %}
+{% endblock %}

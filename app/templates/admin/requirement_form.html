@@ -1,0 +1,22 @@
+{% extends "admin/base.html" %}
+{% block content %}
+<h1>{{ title }}</h1>
+<p class="muted"><a href="/admin/profiles/{{ profile.id }}/edit">← Back to profile</a></p>
+<form method="post" action="{{ '/admin/profiles/' ~ profile.id ~ '/requirements/new' if not req else '/admin/requirements/' ~ req.id ~ '/edit' }}">
+  <label>Category
+    <select name="category" required>
+      {% for c in categories %}
+      <option value="{{ c }}" {% if req and req.category == c %}selected{% endif %}>{{ c }}</option>
+      {% endfor %}
+    </select>
+  </label>
+  <label>Value min <input type="text" name="value_min" value="{{ req.value_min if req and req.value_min is not none else '' }}" /></label>
+  <label>Value max <input type="text" name="value_max" value="{{ req.value_max if req and req.value_max is not none else '' }}" /></label>
+  <label>Unit <input type="text" name="unit" value="{{ req.unit if req else '' }}" /></label>
+  <label>Notes <textarea name="notes">{{ req.notes if req else '' }}</textarea></label>
+  <div class="actions">
+    <button type="submit" class="primary">Save</button>
+    <a class="btn" href="/admin/profiles/{{ profile.id }}/edit">Cancel</a>
+  </div>
+</form>
+{% endblock %}

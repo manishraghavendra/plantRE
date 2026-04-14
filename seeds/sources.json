@@ -1,0 +1,23 @@
+[
+  {
+    "title": "Extension drought gardening principles (example)",
+    "url": "https://example.org/extension-drought",
+    "publisher": "State Extension Service (placeholder)",
+    "year": 2023,
+    "source_type": "extension"
+  },
+  {
+    "title": "Plant radiobiology review (example)",
+    "url": "https://example.org/plant-radiobiology",
+    "publisher": "Journal Placeholder",
+    "year": 2020,
+    "source_type": "peer_review"
+  },
+  {
+    "title": "Urban gardening and soil contaminants (example)",
+    "url": "https://example.org/urban-soil",
+    "publisher": "Public Health Notes (placeholder)",
+    "year": 2022,
+    "source_type": "grey_literature"
+  }
+]

@@ -1,0 +1,44 @@
+[
+  {
+    "code": "container_only",
+    "name": "Container-only growing",
+    "description": "No in-ground planting; mobility or contamination avoidance.",
+    "severity_scale": 2,
+    "is_speculative": false
+  },
+  {
+    "code": "drought",
+    "name": "Drought / water rationing",
+    "description": "Limited irrigation; heat stress common.",
+    "severity_scale": 3,
+    "is_speculative": false
+  },
+  {
+    "code": "high_radiation_background_speculative",
+    "name": "Elevated background radiation (modeling)",
+    "description": "Hypothetical stress scenario; not operational guidance without expert review.",
+    "severity_scale": 5,
+    "is_speculative": true
+  },
+  {
+    "code": "home_garden",
+    "name": "Home garden (typical)",
+    "description": "Standard backyard or community plot with reasonable inputs.",
+    "severity_scale": 1,
+    "is_speculative": false
+  },
+  {
+    "code": "indoor_hydro_grid_down",
+    "name": "Indoor hydroponics, limited power",
+    "description": "Sealed or indoor grow with pumps/lights constrained by outages.",
+    "severity_scale": 4,
+    "is_speculative": false
+  },
+  {
+    "code": "urban_contaminated_soil",
+    "name": "Urban soil (possible contamination)",
+    "description": "Assume unknown heavy metals; test and remediate.",
+    "severity_scale": 3,
+    "is_speculative": false
+  }
+]

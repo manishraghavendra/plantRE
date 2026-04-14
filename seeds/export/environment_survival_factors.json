@@ -1,0 +1,42 @@
+[
+  {
+    "environment_code": "drought",
+    "survival_factor_name": "Water security",
+    "relevance": "primary"
+  },
+  {
+    "environment_code": "drought",
+    "survival_factor_name": "Temperature extremes",
+    "relevance": "secondary"
+  },
+  {
+    "environment_code": "urban_contaminated_soil",
+    "survival_factor_name": "Soil contamination",
+    "relevance": "primary"
+  },
+  {
+    "environment_code": "urban_contaminated_soil",
+    "survival_factor_name": "Nutrition completeness",
+    "relevance": "secondary"
+  },
+  {
+    "environment_code": "indoor_hydro_grid_down",
+    "survival_factor_name": "Energy for grow systems",
+    "relevance": "primary"
+  },
+  {
+    "environment_code": "indoor_hydro_grid_down",
+    "survival_factor_name": "Water security",
+    "relevance": "secondary"
+  },
+  {
+    "environment_code": "high_radiation_background_speculative",
+    "survival_factor_name": "Radiation exposure",
+    "relevance": "primary"
+  },
+  {
+    "environment_code": "high_radiation_background_speculative",
+    "survival_factor_name": "Nutrition completeness",
+    "relevance": "secondary"
+  }
+]
